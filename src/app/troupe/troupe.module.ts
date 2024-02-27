@@ -14,7 +14,7 @@ import { TroupeService } from './troupe.service';
     DetailTroupeComponent,
     TroupeTypeColorPipe,
     BorderCardDirective,
-    CommonModule
+    CommonModule,
   ],
   providers: [TroupeService]
 })
