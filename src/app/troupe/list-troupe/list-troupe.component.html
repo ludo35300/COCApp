@@ -1,0 +1,13 @@
+<h1 class="center">Mes troupes</h1>
+
+<div class='container'>
+  <div class="row">
+
+    <div *ngFor="let troupe of troupeList" class="troupe col s6 m4" >
+      <div (click)="goToTroupe(troupe)" class='main' >
+        <img class='card-image' [src]="troupe.picture" [alt]="troupe.name" />
+        
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div *ngIf="troupe" class="row">
+  <div class="col s12 m8 offset-m2">
+    <h2 class="header center">{{ troupe.name }}</h2>
+    <div class="card horizontal hoverable">
+      <div class="card-image">
+        <img [src]="troupe.picture">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <table class="bordered striped">
+            <tbody>
+              <tr>
+                <td>Nom</td>
+                <td><strong>{{ troupe.name }}</strong></td>
+              </tr>
+              <tr>
+                <td>Points de vie</td>
+                <td><strong>{{ troupe.hpMax }}</strong></td>
+              </tr>
+              <tr>
+                <td>Dégâts</td>
+                <td><strong>{{ troupe.cpMax }}</strong></td>
+              </tr>
+              <tr>
+                <td>Type</td>
+                <td>
+                  <span *ngFor="let type of troupe.type" class="{{ type.toString() | troupeTypeColor }}">{{ type
+                    }}</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Date de création</td>
+                <td><em>{{ troupe.created | date:"dd/MM/yyyy" }}</em></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-action">
+          <a (click)="goToTroupeList()">Retour</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h4 *ngIf='!troupe' class="center">Aucune troupe à afficher !</h4>
